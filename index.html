@@ -1,15 +1,65 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LUMEN Table Lamp</title>
-  <meta http-equiv="refresh" content="0; url=./table-lamp.html">
-  <script>
-    window.location.replace("./table-lamp.html");
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUMEN Table Lamp</title>
+<link rel="stylesheet" href="table-lamp.css">
 </head>
 <body>
-  <p>Yonlendiriliyor... Acilmazsa <a href="./table-lamp.html">buraya tikla</a>.</p>
+  <main class="scene" id="scene">
+    <div class="wall"></div>
+    <div class="wall-glow"></div>
+    <div class="table"></div>
+    <div class="pool-glow"></div>
+
+    <section class="lamp" aria-label="Masa lambasi">
+      <div class="lamp-shadow" aria-hidden="true"></div>
+
+      <div class="shade-wrap">
+        <div class="shade-cap"></div>
+        <div class="shade">
+          <div class="shade-inner"></div>
+        </div>
+        <div class="shade-rim"></div>
+        <div class="bulb" aria-hidden="true"></div>
+        <div class="light-cone" aria-hidden="true"></div>
+      </div>
+
+      <div class="neck"></div>
+      <div class="stem"></div>
+
+      <div class="base">
+        <div class="base-top"></div>
+        <div class="base-mid"></div>
+        <div class="base-foot"></div>
+      </div>
+
+      <div class="cord" id="cord">
+        <svg class="cord-svg" viewBox="0 0 120 250" aria-hidden="true">
+          <path id="cordHit" class="cord-hit"></path>
+          <path id="cordPathBack" class="cord-path cord-path-back"></path>
+          <path id="cordPathFront" class="cord-path cord-path-front"></path>
+        </svg>
+        <button id="cordButton" class="cord-bead" type="button" aria-label="Ipi cek, lambayi ac veya kapa" aria-pressed="false"></button>
+      </div>
+    </section>
+  </main>
+
+  <div class="brand" aria-hidden="true">
+    <div class="brand-title">LUMEN</div>
+  </div>
+
+  <p class="hint">Ipi tutup asagi cek, birakinca lamba degisir.</p>
+
+  <div class="hud" id="hud" aria-live="polite">
+    <div class="hud-dot" id="hudDot"></div>
+    <span class="hud-text" id="hudText">Kapali</span>
+  </div>
+
+  <div class="grain" aria-hidden="true"></div>
+
+<script src="table-lamp.js"></script>
 </body>
 </html>
+
